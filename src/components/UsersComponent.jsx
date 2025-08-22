@@ -10,9 +10,9 @@ export default function UsersComponent() {
   function onSubmitUser() {
     const newUser = { username: username, email: email };
     setUserState([...userState, newUser]);
+    console.log(`New user added: ${username}, ${email}`);
     setUserName("");
     setEmail("");
-    console.log(`New user added: ${username}, ${email}`);
   }
   const [userState, setUserState] = useState(mockData);
   const [username, setUserName] = useState("");
