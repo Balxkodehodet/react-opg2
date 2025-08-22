@@ -21,5 +21,18 @@ export default function FetchComponent(url) {
       }
     }
     fetchData(url);
-  }, []);
+  }, [url]);
 }
+return (
+  <>
+    {loading && <p>Loading...</p>}
+    {error && <p>Error: {error}</p>}
+    {data &&
+      data.map((item, index) => (
+        <div key={index}>
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+        </div>
+      ))}
+  </>
+);
