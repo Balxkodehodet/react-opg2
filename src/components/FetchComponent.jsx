@@ -16,6 +16,8 @@ export default function FetchComponent(url) {
         setData(response);
       } catch (err) {
         setError(`error fetching data: ${err.message}`);
+      } finally {
+        setLoading(false);
       }
     }
     fetchData(url);
