@@ -31,7 +31,7 @@ export default function FetchComponent({ url }) {
       {error && <p>Error: {error}</p>}
       {data && (
         <div>
-          <img src={data.icon_url} />
+          <img className="chuck-norrisimg" src={data.icon_url} />
           <p>{data.value}</p>
           <button onClick={() => fetchData(url)}>Next joke</button>
         </div>

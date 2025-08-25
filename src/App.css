@@ -41,6 +41,25 @@
   color: #888;
 }
 .cookie {
-  width: 15%;
+  width: 20%;
   height: auto;
+}
+.btnCookie {
+  align-items: center;
+  width: 25%;
+  padding: 10px;
+}
+.chuck-norrisimg:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .cookie {
+    width: 20%;
+    height: auto;
+  }
+  .btnCookie {
+    width: 100%;
+    padding: 20px;
+  }
 }
