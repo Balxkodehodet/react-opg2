@@ -27,6 +27,7 @@ export default function UsersComponent() {
       ))}
       <h3>Add new user</h3>
       <form id="userForm">
+        <label htmlFor="username">Enter username: </label>
         <input
           id="username"
           type="text"
@@ -34,7 +35,7 @@ export default function UsersComponent() {
           value={username}
           onChange={(e) => setUserName(e.target.value)}
         />
-        <label htmlFor="username">Enter username: </label>
+        <label htmlFor="email">Enter email: </label>
         <input
           id="email"
           type="email"
@@ -42,7 +43,6 @@ export default function UsersComponent() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label htmlFor="email">Enter email: </label>
       </form>
       <button onClick={() => onSubmitUser()}>Submit</button>
     </>
