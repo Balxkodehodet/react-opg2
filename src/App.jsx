@@ -5,8 +5,7 @@ import UsersComponent from "./components/UsersComponent.jsx";
 import FetchComponent from "./components/FetchComponent.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const url = "https://jsonplaceholder.typicode.com/posts";
+  const url = "https://api.chucknorris.io/jokes/random";
   return (
     <>
       <FetchComponent url={url} />
