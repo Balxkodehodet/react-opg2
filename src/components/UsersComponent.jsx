@@ -25,18 +25,25 @@ export default function UsersComponent() {
           <p>{user.email}</p>
         </div>
       ))}
-      <input
-        type="text"
-        placeholder="username..."
-        value={username}
-        onChange={(e) => setUserName(e.target.value)}
-      />
-      <input
-        type="email"
-        placeholder="email..."
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+      <h3>Add new user</h3>
+      <form id="userForm">
+        <input
+          id="username"
+          type="text"
+          placeholder="username..."
+          value={username}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <label htmlFor="username">Enter username: </label>
+        <input
+          id="email"
+          type="email"
+          placeholder="email..."
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="email">Enter email: </label>
+      </form>
       <button onClick={() => onSubmitUser()}>Submit</button>
     </>
   );

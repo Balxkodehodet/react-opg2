@@ -51,8 +51,21 @@
 }
 .chuck-norrisimg:hover {
   transform: scale(1.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 12px 12px 12px #646cffaa;
 }
-
+button {
+  margin: 20px;
+}
+button:hover {
+  margin: 20px;
+  transform: scale(1.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 12px 12px 12px #646cffaa;
+}
+#userForm input {
+  margin: 20px;
+}
 @media (max-width: 600px) {
   .cookie {
     width: 20%;
