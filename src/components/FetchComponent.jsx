@@ -4,6 +4,7 @@ export default function FetchComponent({ url }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [i, setI] = useState(0); // index for cycling through facts
 
   async function fetchData(url) {
     setLoading(true);
@@ -15,7 +16,6 @@ export default function FetchComponent({ url }) {
       }
       const response = await data2.json();
       setData(response);
-      console.log(data);
     } catch (err) {
       setError(`error fetching data: ${err.message}`);
     } finally {
@@ -23,6 +23,9 @@ export default function FetchComponent({ url }) {
     }
   }
 
+  function handleClick() {
+    setI((prev) => (prev < 6 ? prev + 1 : 0));
+  }
   useEffect(() => {
     fetchData(url);
   }, [url]);
@@ -30,15 +33,9 @@ export default function FetchComponent({ url }) {
     <>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      {data &&
-        data.data.map((fact, index) => (
-          <div key={index}>
-            <h2>Cat facts:</h2>
-            <p>{fact.fact}</p>
-            <button onClick={() => fetchData(url)}>Next joke</button>
-          </div>
-        ))}
-      )
+      {data.data && <p className="cat-factbackground">{data.data[i].fact}</p>}
+
+      <button onClick={() => handleClick()}>Next fact... Fact nr: {i}</button>
     </>
   );
 }

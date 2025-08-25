@@ -70,6 +70,13 @@ button:hover {
 body {
   background-color: rgb(254, 138, 84);
 }
+.cat-factbackground {
+  background-color: rgb(144, 160, 195);
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+  font-size: 20px;
+}
 @media (max-width: 600px) {
   .cookie {
     width: 20%;
