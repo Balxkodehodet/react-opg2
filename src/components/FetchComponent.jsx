@@ -15,6 +15,7 @@ export default function FetchComponent({ url }) {
       }
       const response = await data2.json();
       setData(response);
+      console.log(data);
     } catch (err) {
       setError(`error fetching data: ${err.message}`);
     } finally {
@@ -29,13 +30,15 @@ export default function FetchComponent({ url }) {
     <>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      {data && (
-        <div>
-          <img className="chuck-norrisimg" src={data.icon_url} />
-          <p>{data.value}</p>
-          <button onClick={() => fetchData(url)}>Next joke</button>
-        </div>
-      )}
+      {data &&
+        data.data.map((fact, index) => (
+          <div key={index}>
+            <h2>Cat facts:</h2>
+            <p>{fact.fact}</p>
+            <button onClick={() => fetchData(url)}>Next joke</button>
+          </div>
+        ))}
+      )
     </>
   );
 }

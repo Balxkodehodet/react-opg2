@@ -5,7 +5,7 @@ import UsersComponent from "./components/UsersComponent.jsx";
 import FetchComponent from "./components/FetchComponent.jsx";
 
 function App() {
-  const url = "https://api.chucknorris.io/jokes/random";
+  const url = "https://catfact.ninja/facts?limit=5";
   return (
     <>
       <FetchComponent url={url} />
