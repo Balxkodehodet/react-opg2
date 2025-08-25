@@ -50,6 +50,7 @@ export default function FetchComponent({ url }) {
         Next fact... Fact nr: {i}
       </button>
       <button onClick={() => setPage((prev) => prev + 1)}>Next page</button>
+      <button onClick={() => setPage((prev) => prev - 1)}>previous page</button>
       <p>Page: {page}</p>
     </>
   );
