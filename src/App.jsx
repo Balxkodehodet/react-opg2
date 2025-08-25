@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <FetchComponent url={url} />
+      <hr></hr>
       <CookieComponent />
       <UsersComponent />
     </>
