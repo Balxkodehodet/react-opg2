@@ -19,12 +19,6 @@ export default function UsersComponent() {
   const [email, setEmail] = useState("");
   return (
     <>
-      {userState.map((user, index) => (
-        <div key={index} className="user">
-          <h2>{user.username}</h2>
-          <p>{user.email}</p>
-        </div>
-      ))}
       <h3>Add new user</h3>
       <form id="userForm">
         <label htmlFor="username">Enter username: </label>
@@ -45,6 +39,12 @@ export default function UsersComponent() {
         />
       </form>
       <button onClick={() => onSubmitUser()}>Submit</button>
+      {userState.map((user, index) => (
+        <div key={index} className="user">
+          <h2>{user.username}</h2>
+          <p>{user.email}</p>
+        </div>
+      ))}
     </>
   );
 }

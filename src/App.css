@@ -43,6 +43,7 @@
 .cookie {
   width: 20%;
   height: auto;
+  animation: logo-spin infinite 10s linear;
 }
 .btnCookie {
   align-items: center;
@@ -64,7 +65,10 @@ button:hover {
   box-shadow: 12px 12px 12px #646cffaa;
 }
 #userForm input {
-  margin: 20px;
+  margin: 10px;
+}
+body {
+  background-color: rgb(254, 138, 84);
 }
 @media (max-width: 600px) {
   .cookie {
